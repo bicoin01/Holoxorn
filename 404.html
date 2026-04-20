@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holoxorn - Page Not Found</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0a2a 0%, #1a0a3a 50%, #0a0a2a 100%);
+            color: white;
+            font-family: 'Orbitron', monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .error-container {
+            text-align: center;
+            padding: 50px;
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(20px);
+            border-radius: 50px;
+            border: 2px solid #9b59b6;
+            animation: fadeIn 0.8s ease-out;
+            max-width: 600px;
+            margin: 20px;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        .error-code { font-size: 120px; font-weight: 900; color: #00ff99; text-shadow: 0 0 30px #00ff99; line-height: 1; }
+        .error-title { font-size: 2rem; color: #c084fc; margin: 20px 0; }
+        .error-message { color: #aaa; margin-bottom: 30px; }
+        .glitch { animation: glitch 0.5s infinite; }
+        @keyframes glitch {
+            0% { text-shadow: -2px 0 #ff00ff, 2px 0 #00ffff; }
+            50% { text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff; }
+            100% { text-shadow: -2px 0 #ff00ff, 2px 0 #00ffff; }
+        }
+        .home-btn {
+            background: linear-gradient(90deg, #9b59b6, #3498db);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 40px;
+            font-family: 'Orbitron';
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .home-btn:hover { transform: scale(1.05); box-shadow: 0 0 30px #9b59b6; }
+        .suggestions { margin-top: 30px; font-size: 0.8rem; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code glitch">404</div>
+        <h1 class="error-title"><i class="fas fa-robot"></i> Neural Link Disconnected</h1>
+        <p class="error-message">The Holoxorn AI cannot find the requested page.<br>It may have been moved, deleted, or never existed in this dimension.</p>
+        <a href="/" class="home-btn"><i class="fas fa-home"></i> RETURN TO HOLOXORN</a>
+        <div class="suggestions">
+            <i class="fas fa-microphone"></i> Try voice command | 
+            <i class="fas fa-upload"></i> Upload a file | 
+            <i class="fas fa-language"></i> Change language
+        </div>
+    </div>
+    <script>
+        setTimeout(() => {
+            const btn = document.querySelector('.home-btn');
+            btn.style.animation = 'pulse 1s infinite';
+        }, 1000);
+    </script>
+</body>
+</html>
